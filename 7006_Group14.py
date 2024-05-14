@@ -193,7 +193,7 @@ with tab2:
     labels = ["No Fraud", "Fraud"]
 
     # Plot
-    fig, ax = plt.subplots(figsize=(6, 4))
+    fig, ax = st.pyplot(figsize=(6, 4))
     ax.pie(category_counts, labels=labels, autopct=lambda p: '{:.0f} ({:.1f}%)'.format(p * sum(category_counts) / 100, p), startangle=140, explode=[0.05,0],colors=pie_colors)
     ax.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle
 
