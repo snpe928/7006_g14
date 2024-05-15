@@ -88,10 +88,13 @@ else:
 # Displays the user input features
 st.subheader('User Input features')
 
+##new##
+st.write('processing input')
+########
 if uploaded_file is not None:
     st.write(input_df.iloc[[0]])
 else:
-    st.write(input_df)
+    st.write('input',input_df)
 
 tab1, tab2 = st.tabs(["Prediction", "Exploration"])
 
