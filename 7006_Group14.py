@@ -163,6 +163,7 @@ with tab1:
 
             # Make predictions
             st.write('predict pickle')
+            st.write(input_data)
             prediction = load_gbc.predict(input_data)
 
             # Predict probabilities
