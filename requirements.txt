@@ -1,1 +1,5 @@
-
+matplotlib
+streamlit
+seaborn
+scipy
+skew

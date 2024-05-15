@@ -3,14 +3,14 @@ import streamlit as st
 import pickle
 import pandas as pd
 import numpy as np
-import matplotlib as plt
-#import seaborn as sns
+import matplotlib.pyplot as plt
+import seaborn as sns
 #from sklearn.preprocessing import StandardScaler
 #from sklearn.ensemble import GradientBoostingClassifier
 #from sklearn.model_selection import train_test_split
 #from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score, mean_squared_error, classification_report
 #from imblearn.over_sampling import SMOTE
-#from scipy.stats import skew, kurtosis
+from scipy.stats import skew, kurtosis
 
 # Set page configuration
 st.set_page_config(
@@ -178,7 +178,8 @@ with tab1:
                 st.success('**Non-Fraudulent Claim** \n\n\n *Action Item*: \n\n\n 1. Process the claim amount accordingly on FileaClaim portal\n\n\n 2. Notify customer the status of their claim once it is processed \n\n\n 3. Gather feedback from customer after their claim is resolved')
 
         except Exception as e:
-            st.error('Welcome! Please enter your claim information correctly on the left.')
+            st.error(e)
+            
 
 with tab2:
     st.title('Exploratory Data Analysis')
@@ -193,7 +194,14 @@ with tab2:
     labels = ["No Fraud", "Fraud"]
 
     # Plot
-    fig, ax = plt.subplots(figsize=(6, 4))
+    #fig, ax = plt.subplots(figsize=(6, 4))
+    ##new##
+    arr = np.random.normal(1, 1, size=100)
+    fig, ax = plt.subplots()
+    ax.hist(arr, bins=20)
+
+    st.pyplot(fig)
+    ########
     ax.pie(category_counts, labels=labels, autopct=lambda p: '{:.0f} ({:.1f}%)'.format(p * sum(category_counts) / 100, p), startangle=140, explode=[0.05,0],colors=pie_colors)
     ax.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle
 
