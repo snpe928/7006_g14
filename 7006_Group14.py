@@ -88,13 +88,10 @@ else:
 # Displays the user input features
 st.subheader('User Input features')
 
-##new##
-st.write('processing input')
-########
 if uploaded_file is not None:
     st.write(input_df.iloc[[0]])
 else:
-    st.write('input',input_df)
+    st.write(input_df)
 
 tab1, tab2 = st.tabs(["Prediction", "Exploration"])
 
@@ -158,16 +155,12 @@ with tab1:
         # Make predictions
         try:
             # Load the classification model
-            st.write('loading pickle')
             load_gbc = pickle.load(open('gbcfit.pkl', 'rb'))
 
             # Make predictions
-            st.write('predict pickle')
-            st.write(input_data)
             prediction = load_gbc.predict(input_data)
 
             # Predict probabilities
-            st.write('predict probability')
             predicted_proba = load_gbc.predict_proba(input_data)
 
             st.write('### Prediction Probability:')
