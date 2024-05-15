@@ -158,9 +158,11 @@ with tab1:
         # Make predictions
         try:
             # Load the classification model
+            st.write('loading pickle')
             load_gbc = pickle.load(open('rf.pkl', 'rb'))
 
             # Make predictions
+            st.write('predict pickle')
             prediction = load_gbc.predict(input_data)
 
             # Predict probabilities
