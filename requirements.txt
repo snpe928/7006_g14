@@ -1,3 +1,6 @@
 matplotlib
 streamlit
 seaborn
+scipy
+skew
+kurtosis
