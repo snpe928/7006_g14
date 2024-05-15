@@ -178,7 +178,8 @@ with tab1:
                 st.success('**Non-Fraudulent Claim** \n\n\n *Action Item*: \n\n\n 1. Process the claim amount accordingly on FileaClaim portal\n\n\n 2. Notify customer the status of their claim once it is processed \n\n\n 3. Gather feedback from customer after their claim is resolved')
 
         except Exception as e:
-            st.error('Welcome! Please enter your claim information correctly on the left.')
+            st.error(e)
+            
 
 with tab2:
     st.title('Exploratory Data Analysis')
