@@ -3,7 +3,7 @@ import streamlit as st
 import pickle
 import pandas as pd
 import numpy as np
-import matplotlib as plt
+import matplotlib.pyplot as plt
 #import seaborn as sns
 #from sklearn.preprocessing import StandardScaler
 #from sklearn.ensemble import GradientBoostingClassifier
@@ -193,7 +193,14 @@ with tab2:
     labels = ["No Fraud", "Fraud"]
 
     # Plot
-    fig, ax = plt.subplots(figsize=(6, 4))
+    #fig, ax = plt.subplots(figsize=(6, 4))
+    ##new##
+    arr = np.random.normal(1, 1, size=100)
+    fig, ax = plt.subplots()
+    ax.hist(arr, bins=20)
+
+    st.pyplot(fig)
+    ########
     ax.pie(category_counts, labels=labels, autopct=lambda p: '{:.0f} ({:.1f}%)'.format(p * sum(category_counts) / 100, p), startangle=140, explode=[0.05,0],colors=pie_colors)
     ax.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle
 
