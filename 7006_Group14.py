@@ -166,6 +166,7 @@ with tab1:
             prediction = load_gbc.predict(input_data)
 
             # Predict probabilities
+            st.write('predict probability')
             predicted_proba = load_gbc.predict_proba(input_data)
 
             st.write('### Prediction Probability:')
