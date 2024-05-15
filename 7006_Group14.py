@@ -159,7 +159,7 @@ with tab1:
         try:
             # Load the classification model
             st.write('loading pickle')
-            load_gbc = pickle.load(open('rf.pkl', 'rb'))
+            load_gbc = pickle.load(open('gbcfit.pkl', 'rb'))
 
             # Make predictions
             st.write('predict pickle')
