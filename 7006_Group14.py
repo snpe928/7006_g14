@@ -3,7 +3,7 @@ import streamlit as st
 import pickle
 import pandas as pd
 import numpy as np
-import matplotlib as plt
+import matplotlib.subplots as plt
 #import seaborn as sns
 #from sklearn.preprocessing import StandardScaler
 #from sklearn.ensemble import GradientBoostingClassifier
