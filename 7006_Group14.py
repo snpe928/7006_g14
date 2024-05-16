@@ -91,7 +91,7 @@ st.subheader('User Input features')
 row = input_df
 
 if uploaded_file is not None:
-    selected_claim_number = st.radio('Select Claim Number', input_df['claim_number'])
+    selected_claim_number = st.selectbox('Select Claim Number', input_df['claim_number'])
     st.write('You selected claim number:', selected_claim_number)
     selected_row = input_df[input_df['claim_number'] == selected_claim_number]
     row = selected_row
