@@ -206,7 +206,7 @@ with tab1:
 with tab2:
 
     if uploaded_file is None:
-        st.error("Please upload a CSV file to get started. If you have already uploaded a file, please select the file from the left sidebar.")
+        st.error("Please upload a CSV file from the left sidebar to get started.")
     else:
         st.title('Exploratory Data Analysis')
 
