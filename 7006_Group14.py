@@ -157,7 +157,7 @@ with tab1:
         # Make predictions
         try:
             # Load the classification model
-            load_gbc = pickle.load(open('gbcfit.pkl', 'rb'))
+            load_gbc = pickle.load(open('bestmodel.pkl', 'rb'))
 
             # Make predictions
             prediction = load_gbc.predict(input_data)
