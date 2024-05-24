@@ -5,11 +5,6 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-# from sklearn.preprocessing import StandardScaler
-# from sklearn.ensemble import GradientBoostingClassifier
-# from sklearn.model_selection import train_test_split
-# from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score, mean_squared_error, classification_report
-# from imblearn.over_sampling import SMOTE
 from scipy.stats import skew, kurtosis
 
 # Set page configuration
@@ -120,22 +115,6 @@ with tab1:
     Liability = row['Liability (%)'].iloc[0]
     SafetyRating = row['Safety Rating'].iloc[0]
 
-    # Gender = input_df['Gender'].iloc[selected_row]
-    # ChangeofAddress = input_df['Change of Address'].iloc[selected_row]
-    # LivingStatus = input_df['Living Status'].iloc[selected_row]
-    # HighEducation = input_df['High Education'].iloc[selected_row]
-    # Witness = input_df['Witness'].iloc[selected_row]
-    # PoliceReport = input_df['Police Report'].iloc[selected_row]
-    # MaritalStatus = input_df['Marital Status'].iloc[selected_row]
-    # ClaimDay = input_df['Claim Day'].iloc[selected_row]
-    # AccidentSite = input_df['Accident Site'].iloc[selected_row]
-    # AnnualIncome = input_df['Annual Income'].iloc[selected_row]
-    # ClaimAmount = input_df['Claim Amount'].iloc[selected_row]
-    # PastNumberofClaims = input_df['Past Number of Claims'].iloc[selected_row]
-    # AgeofVehicle = input_df['Age of Vehicle'].iloc[selected_row]
-    # Liability = input_df['Liability (%)'].iloc[selected_row]
-    # SafetyRating = input_df['Safety Rating'].iloc[selected_row]
-
     # Convert categorical variables to numerical
     a = 1 if Gender == 'F' else 0
     b = 1 if ChangeofAddress == 'Yes' else 0
@@ -178,7 +157,7 @@ with tab1:
         # Make predictions
         try:
             # Load the classification model
-            load_gbc = pickle.load(open('gbcfit.pkl', 'rb'))
+            load_gbc = pickle.load(open('bestmodel.pkl', 'rb'))
 
             # Make predictions
             prediction = load_gbc.predict(input_data)
